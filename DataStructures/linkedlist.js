@@ -46,6 +46,28 @@ class LinkedList {
   }
 
   //delete head
+  // catch no head cases
+  // if theres only one node
+  // set it to null
+  //  else
+  //  set the head to the next node
+  //  set prev to null
+
+  deleteHead() {
+    if (!this.head) {
+      return null
+    } else {
+      let removeHead = this.head
+
+      if (this.head === this.tail) {
+        this.head = this.tail = null
+      } else {
+        this.head = this.head.next
+        this.head.prev = null
+      }
+      return removeHead.value
+    }
+  }
 
   //delete tail
 
@@ -62,5 +84,6 @@ list.append(4)
 list.append(0)
 list.append(-1)
 
+list.deleteHead()
 
 console.log(list)
