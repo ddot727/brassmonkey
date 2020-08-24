@@ -4,18 +4,6 @@ class Node {
     this.prev = prev || null
     this.next = next || null
   }
-
-  getValue() {
-    return this.value
-  }
-
-  getNext() {
-    return this.next
-  }
-
-  getPrev() {
-    return this.prev
-  }
 }
 
 class LinkedList {
