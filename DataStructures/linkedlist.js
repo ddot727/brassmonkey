@@ -58,7 +58,6 @@ class LinkedList {
       return null
     } else {
       let removeHead = this.head
-
       if (this.head === this.tail) {
         this.head = this.tail = null
       } else {
@@ -71,7 +70,36 @@ class LinkedList {
 
   //delete tail
 
+  deleteTail() {
+    if (!this.tail) {
+      return null
+    } else {
+      let removedTail = this.tail
+      if (this.tail === this.head) {
+        this.tail = this.head = null
+      } else {
+        this.tail = this.tail.prev
+        this.tail.next = null
+      }
+
+      return removedTail.value
+    }
+  }
+
   //search
+
+  search(value) {
+    let currentNode = this.head
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return currentNode
+      }
+      currentNode = currentNode.next
+    }
+
+    return null
+  }
 }
 
 let list = new LinkedList();
@@ -79,11 +107,15 @@ let list = new LinkedList();
 list.append(1)
 list.append(2)
 list.append(3)
-list.append(4)
 
-list.append(0)
-list.append(-1)
+list.prepend(0)
+list.prepend(-1)
 
 list.deleteHead()
 
-console.log(list)
+list.deleteTail()
+
+
+console.log(list.search(1))
+
+console.log(list.search(3))
