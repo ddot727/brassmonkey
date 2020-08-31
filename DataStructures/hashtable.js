@@ -16,15 +16,25 @@ class HashTable {
       this.buckets[i] = new Map()
     }
   }
-
+  //Takes in key and value
+  //Hash the key
+  //access the bucket at the index
   insert() {
 
   }
-
+  //takes in key
+  //hash the key
+  //store the value to be deleted as a variable
+  //actually delete item
+  //return deleted
   remove() {
 
   }
-
+  //takes in key
+  //hash the key
+  //see if value in the bucket
+  //if so, return value
+  //else return null
   search() {
 
   }
